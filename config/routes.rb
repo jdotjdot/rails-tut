@@ -1,6 +1,8 @@
 SampleApp::Application.routes.draw do
 
-  get "users/new"
+  resources :users
+  match '/users_index', to: 'users#new', via: 'get'
+
   root 'static_pages#home'
 
   # rest of the pages
